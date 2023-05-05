@@ -8,8 +8,8 @@ commandLine.addEventListener("keydown", function(event) {
     const command = commandLine.value.trim();
     commandLine.value = "";
     const output = handleCommand(command);
-    addLine(prompt + command);
     addLine(output);
+    addLine(prompt + command);
     terminalBody.scrollTop = terminalBody.scrollHeight;
   }
 });
@@ -17,7 +17,7 @@ commandLine.addEventListener("keydown", function(event) {
 function handleCommand(command) {
   switch (command) {
     case "help":
-      return "Available commands: bio, projects, skills, contact";
+      return "Available commands: bio, projects, skills, contact ";
     case "bio":
       return "Hi, my name is John Doe and I'm a web developer.";
     case "projects":
@@ -34,6 +34,8 @@ function handleCommand(command) {
 function addLine(text) {
   const line = document.createElement("div");
   line.classList.add("terminal-line");
-  line.textContent = text;
-  terminalBody.appendChild(line);
+  line.innerHTML = '<span style="color: #6ab0f3;">yasinerel</span>@<span style="color: #ffeea6;">me</span>:~$ ' + text;
+  terminalBody.insertBefore(line, terminalBody.firstChild);
+
+  
 }
