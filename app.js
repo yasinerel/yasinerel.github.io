@@ -93,7 +93,6 @@ function addLine(text) {
 
   terminalBody.insertBefore(line, commandLine.parentNode);
   terminalBody.scrollTop = terminalBody.scrollHeight;
-  
   commandLine.value = "";
   commandLine.focus();
 }
