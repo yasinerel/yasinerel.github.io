@@ -52,6 +52,9 @@ body {
     flex-direction: column;
     flex-grow: 1;
     padding: 12px;
+    height: 300px; /* set a fixed height for the terminal body */
+    overflow-y: auto; /* add a vertical scrollbar when content overflows */
+  
   }
   
   .terminal-line {
@@ -87,5 +90,17 @@ body {
     font-family: "Courier New", monospace;
     font-size: 14px;
     outline: none;
+  }
+
+  #terminal-body::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  #terminal-body::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  #terminal-body::-webkit-scrollbar-thumb {
+    background-color: #000000;
   }
   

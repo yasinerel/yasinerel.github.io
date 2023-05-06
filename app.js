@@ -22,8 +22,6 @@ function handleCommand(command) {
       const linksIcon = '<i class="fa-solid fa-link fa-lg" style="color: #b3b9c5;"></i>';
       const clearIcon = '<i class="fa-solid fa-eraser fa-lg" style="color: #b3b9c5;"></i>';
 
-
-      
       const help= "<span style='color: #92d192;  padding-left: 9px;'> help</span> list down all available commands";
       const info= "<span style='color: #92d192;  padding-left: 3px;'> info</span> show information about me";
       const projects= "<span style='color: #92d192;'> projects</span> display a list of my major projects";
@@ -53,9 +51,9 @@ function handleCommand(command) {
       text + '<br>'  + ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ 
       pythonIcon + " " + javaIcon + " " + jsIcon + " " + 
       reactIcon + " " + dbIcon + " " + linuxIcon + " "+ npmIcon + " " + gitIcon;
+
     case "projects":
-      const githubIcon = '';
-      
+      const githubIcon = '<i class="fa-brands fa-github fa-lg" style="color: #cfc33a;"></i>';
       const javaOOP= "<span style='color: #ff294d;'> java oop</span> games developed with Java Swing GUI with OOP Principles";
       const numValid= "<span style='color: #ff294d;'> number validator</span> app developed by using React-Native and npm libraries to check the number";
       const weatherApi= "<span style='color: #ff294d;'> weather api</span> website to check the weather by usin API services";
@@ -88,9 +86,6 @@ function handleCommand(command) {
       return "command not found: " + command;
   }
 }
-
-
-
 function addLine(text) {
   const line = document.createElement("div");
   line.classList.add("terminal-line");
