@@ -8,7 +8,7 @@ commandLine.addEventListener("keydown", function(event) {
     const command = commandLine.value.trim();
     commandLine.value = "";
     const output = handleCommand(command);
-    addLine(command);
+    // addLine(command);
     addLine(output);
     terminalBody.scrollTop = terminalBody.scrollHeight;
   }
@@ -29,13 +29,40 @@ function handleCommand(command) {
       const linuxIcon = '<i class="fa-brands fa-linux fa-lg" style="color: #979ca5;"></i>';
       const npmIcon = '<i class="fa-brands fa-npm fa-lg" style="color: #828a97;"></i>';
       const gitIcon = '<i class="fa-brands fa-git-alt fa-lg" style="color: #9cabc4;"></i>';
-
-      const ig = '<img src="001-delete.png" alt="Image of me" style="max-width: 20px;">';
-      return '<div style="display: flex; align-items: flex-start;"><div>' + image + '</div><div style="margin-left: 10px;">' + text + '<br>'  + ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ pythonIcon + " " + javaIcon + " " + jsIcon + " " + reactIcon + " " + dbIcon + " " + linuxIcon + " "+ npmIcon + " " + gitIcon;
+      const ig = '<img src="dash.png" alt="Image of me" style="max-width: 20px;">';
+      return '<span style="color: #92d192;">' + command + '</span><br>' + '<div style="display: flex; align-items: flex-start;"><div>' + 
+      image + '</div><div style="margin-left: 10px;">' + 
+      text + '<br>'  + ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ ig+ 
+      pythonIcon + " " + javaIcon + " " + jsIcon + " " + 
+      reactIcon + " " + dbIcon + " " + linuxIcon + " "+ npmIcon + " " + gitIcon;
     case "projects":
-      return "Here are some projects I've worked on: Project A, Project B, Project C.";
+      const githubIcon = '<i class="fa-brands fa-github fa-lg" style="color: #a6c026;"></i>';
+      
+      const javaOOP= "<span style='color: #ff294d;'> java oop</span> games developed with Java Swing GUI with OOP Principles";
+      const numValid= "<span style='color: #ff294d;'> number validator</span> app developed by using React-Native and npm libraries to check the number";
+      const weatherApi= "<span style='color: #ff294d;'> weather api</span> website to check the weather by usin API services";
+      const sozluku= "<span style='color: #ff294d;'> sozluku</span> kind of twitter app developed for my friends using Flutter, Appwrite, Docker" ;
+      const contaclessPay= "<span style='color: #ff294d;'> contaclessPay</span> application that allows contactless payment with image recognition";
+      const parkDetect= "<span style='color: #ff294d;'> parkDetect</span> application that allows finding suitable parking spaces with image recognition";
+
+      return '<span style="color: #92d192;">' + command + '</span><br>' + '<br>' + githubIcon + javaOOP + '<br>' +
+      '<br>' + githubIcon + numValid+'<br>' +
+      '<br>' + githubIcon + weatherApi+'<br>' +
+      '<br>' + githubIcon + sozluku+'<br>' +
+      '<br>' + githubIcon + contaclessPay+'<br>' +
+      '<br>' + githubIcon + parkDetect;
+
     case "links":
-      return "social links";
+        const githubProfile = '<a href="https://github.com/yasinerel"><i class="fa-brands fa-github fa-lg" style="color: #8b928f;"></i></a>';
+        const email = '<a href="mailto:terel19@ku.edu.tr"><i class="fa-solid fa-envelope fa-lg" style="color: #8b928f;"></i></a>';
+        const phone = '<a href="tel:+905382802703"><i class="fa-brands fa-whatsapp fa-lg" style="color: #8b928f;"></i></a>';
+        const addrs = '<a href="https://goo.gl/maps/UTpuCQw9dhRejeYW8?coh=178571&entry=tt"><i class="fa-solid fa-map-pin fa-lg" style="color: #8b928f;"></i></a>';
+        return '<span style="color: #92d192;">' + command + '</span><br><br>' +
+          githubProfile + ' <span style="color: #76D4D6;"><a href="https://github.com/yasinerel" style="color: #76D4D6; text-decoration: none;">github</a></span>  my profile on github' + '<br>' +'<br>' +
+          email + ' <span style="color: #76D4D6;"><a href="mailto:terel19@ku.edu.tr" style="color: #76D4D6; text-decoration: none;">mail</a></span> lets get in touch!' + '<br>' +'<br>' +
+          phone + ' <span style="color: #76D4D6;"><a href="tel:+905382802703" style="color: #76D4D6; text-decoration: none;">phone</a></span> make a voice call!' + '<br>' +'<br>' +
+          addrs + ' <span style="color: #76D4D6;"><a href="https://goo.gl/maps/UTpuCQw9dhRejeYW8?coh=178571&entry=tt" style="color: #76D4D6; text-decoration: none;">home</a></span> located here';
+      
     case "clear":
       return "temizlikçi";
     default:
