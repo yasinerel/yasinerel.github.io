@@ -8,7 +8,6 @@ commandLine.addEventListener("keydown", function(event) {
     const command = commandLine.value.trim();
     commandLine.value = "";
     const output = handleCommand(command);
-    // addLine(command);
     addLine(output);
     terminalBody.scrollTop = terminalBody.scrollHeight;
   }
@@ -17,7 +16,26 @@ commandLine.addEventListener("keydown", function(event) {
 function handleCommand(command) {
   switch (command) {
     case "help":
-      return "available commands: info, projects, links, clear" ;
+      const helpIcon = '<i class="fa-solid fa-question fa-lg" style="color: #b3b9c5;"></i>';
+      const infoIcon = '<i class="fa-solid fa-circle-info fa-lg" style="color: #b3b9c5;"></i>';
+      const projectsIcon = '<i class="fa-solid fa-gears fa-lg" style="color: #b3b9c5;"></i>';
+      const linksIcon = '<i class="fa-solid fa-link fa-lg" style="color: #b3b9c5;"></i>';
+      const clearIcon = '<i class="fa-solid fa-eraser fa-lg" style="color: #b3b9c5;"></i>';
+
+
+      
+      const help= "<span style='color: #92d192;  padding-left: 9px;'> help</span> list down all available commands";
+      const info= "<span style='color: #92d192;  padding-left: 3px;'> info</span> show information about me";
+      const projects= "<span style='color: #92d192;'> projects</span> display a list of my major projects";
+      const links= "<span style='color: #92d192;'> links</span> get all my important links and socials" ;
+      const clear= "<span style='color: #92d192;'> clear</span> clear terminal screen";
+      
+      return '<span style="color: #92d192;">' + command + '</span><br>' + '<br>' + helpIcon + help + '<br>' +
+      '<br>' + infoIcon + info+'<br>' +
+      '<br>' + projectsIcon + projects+'<br>' +
+      '<br>' + linksIcon + links+'<br>' +
+      '<br>' + clearIcon + clear+'<br>';
+
     case "info":
       const image = '<img src="avtr.png" alt="Image of me" style="max-width: 200px;">';
       const text = "Yo! It is Yasin. I am a third-year computer engineering student with full scholarship at Koç University with a passion for software development. With a strong foundation in <span style='color: #f89820;'>Java, Python, C, and Assembly</span>. I have already developed several object-oriented programming projects. My skills extend beyond programming languages, with experience developing both frontend and backend applications using <span style='color: #f89820;'>React, Node.js, and Next.js.</span> Additionally,I am currently writing a mobile application with Flutter and is eager to expand their knowledge of databases. Not content to simply learn, I am actively developing a project in the field of image processing that has been accepted by Koç University's entrepreneurship institution(KWORKS). With my talent and drive, I am sure to make waves in the world of software development.";
@@ -36,7 +54,7 @@ function handleCommand(command) {
       pythonIcon + " " + javaIcon + " " + jsIcon + " " + 
       reactIcon + " " + dbIcon + " " + linuxIcon + " "+ npmIcon + " " + gitIcon;
     case "projects":
-      const githubIcon = '<i class="fa-brands fa-github fa-lg" style="color: #a6c026;"></i>';
+      const githubIcon = '';
       
       const javaOOP= "<span style='color: #ff294d;'> java oop</span> games developed with Java Swing GUI with OOP Principles";
       const numValid= "<span style='color: #ff294d;'> number validator</span> app developed by using React-Native and npm libraries to check the number";
@@ -64,9 +82,10 @@ function handleCommand(command) {
           addrs + ' <span style="color: #76D4D6;"><a href="https://goo.gl/maps/UTpuCQw9dhRejeYW8?coh=178571&entry=tt" style="color: #76D4D6; text-decoration: none;">home</a></span> located here';
       
     case "clear":
-      return "temizlikçi";
+        location.reload();
+        break;
     default:
-      return "Command not found: " + command;
+      return "command not found: " + command;
   }
 }
 
